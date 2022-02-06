@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ict_solution/chapter1/mcq.dart';
 import 'package:ict_solution/constant.dart';
 
+import '../models/constructor.dart';
+
 class Chap1Index extends StatefulWidget {
   Chap1Index({Key? key}) : super(key: key);
 
@@ -42,13 +44,8 @@ class _Chap1IndexState extends State<Chap1Index> {
                     height: 100,
                     width: MediaQuery.of(context).size.width,
                     child: Center(
-                        child: Text(
-                      "বহুনির্বাচনী প্রশ্নোত্তর",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18),
-                    )),
+                      child: IndexText(text: "বহুনির্বাচনী প্রশ্নোত্তর"),
+                    ),
                     decoration: BoxDecoration(
                       color: chapterClr,
                       borderRadius: BorderRadius.only(
@@ -67,13 +64,8 @@ class _Chap1IndexState extends State<Chap1Index> {
                   height: 100,
                   width: MediaQuery.of(context).size.width,
                   child: Center(
-                      child: Text(
-                    "জ্ঞানমূলক প্রশ্নোত্তর",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18),
-                  )),
+                    child: IndexText(text: "জ্ঞানমূলক প্রশ্নোত্তর"),
+                  ),
                   decoration: BoxDecoration(
                     color: chapterClr,
                     borderRadius: BorderRadius.only(
@@ -92,13 +84,8 @@ class _Chap1IndexState extends State<Chap1Index> {
                   height: 100,
                   width: MediaQuery.of(context).size.width,
                   child: Center(
-                      child: Text(
-                    "অনুধাবনমূলক প্রশ্নোত্তর",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18),
-                  )),
+                    child: IndexText(text: "অনুধাবনমূলক প্রশ্নোত্তর"),
+                  ),
                   decoration: BoxDecoration(
                     color: chapterClr,
                     borderRadius: BorderRadius.only(
