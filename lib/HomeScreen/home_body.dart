@@ -13,7 +13,7 @@ class _HomeBodyState extends State<HomeBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(15.0),
         child: Expanded(
           child: GridView.count(
             crossAxisSpacing: 8,

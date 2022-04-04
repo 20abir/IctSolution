@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ict_solution/chapter1/mcq.dart';
+import 'package:ict_solution/chapter1/Index/mcq.dart';
+import 'package:ict_solution/chapter1/Index/no1.dart';
+import 'package:ict_solution/chapter1/Index/no2.dart';
 import 'package:ict_solution/constant.dart';
 
 import '../models/constructor.dart';
@@ -33,27 +35,14 @@ class _Chap1IndexState extends State<Chap1Index> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: GestureDetector(
+                child: IndexContainer(
+                  indexName: "বহুনির্বাচনী প্রশ্নোত্তর",
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => McqPage()),
                     );
                   },
-                  child: Container(
-                    height: 100,
-                    width: MediaQuery.of(context).size.width,
-                    child: Center(
-                      child: IndexText(text: "বহুনির্বাচনী প্রশ্নোত্তর"),
-                    ),
-                    decoration: BoxDecoration(
-                      color: chapterClr,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(30),
-                        bottomLeft: Radius.circular(30),
-                      ),
-                    ),
-                  ),
                 ),
               ),
 
@@ -64,7 +53,15 @@ class _Chap1IndexState extends State<Chap1Index> {
                   height: 100,
                   width: MediaQuery.of(context).size.width,
                   child: Center(
-                    child: IndexText(text: "জ্ঞানমূলক প্রশ্নোত্তর"),
+                    child: IndexContainer(
+                      indexName: "জ্ঞানমূলক প্রশ্নোত্তর",
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => No1()),
+                        );
+                      },
+                    ),
                   ),
                   decoration: BoxDecoration(
                     color: chapterClr,
@@ -84,7 +81,15 @@ class _Chap1IndexState extends State<Chap1Index> {
                   height: 100,
                   width: MediaQuery.of(context).size.width,
                   child: Center(
-                    child: IndexText(text: "অনুধাবনমূলক প্রশ্নোত্তর"),
+                    child: IndexContainer(
+                      indexName: "অনুধাবনমূলক প্রশ্নোত্তর",
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => No2()),
+                        );
+                      },
+                    ),
                   ),
                   decoration: BoxDecoration(
                     color: chapterClr,

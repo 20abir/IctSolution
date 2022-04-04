@@ -27,33 +27,14 @@ class _McqPageState extends State<McqPage> {
                     Padding(
                       padding: const EdgeInsets.only(
                           left: 10, right: 20, top: 7, bottom: 7),
-                      child: GestureDetector(
+                      child: LevelContainer(
+                        levelText: 'Level 1',
                         onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Level1()),
                           );
                         },
-                        child: Container(
-                          height: 55,
-                          width: MediaQuery.of(context).size.width,
-                          child: Center(child: Text("Level 1")),
-                          decoration: BoxDecoration(
-                            color: Colors.orange[100],
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(30),
-                              bottomLeft: Radius.circular(30),
-                              topLeft: Radius.circular(30),
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                offset: Offset(0.0, 1.0), //(x,y)
-                                blurRadius: 6.0,
-                              ),
-                            ],
-                          ),
-                        ),
                       ),
                     ),
 
@@ -297,6 +278,41 @@ class _McqPageState extends State<McqPage> {
               ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class LevelContainer extends StatelessWidget {
+  final String levelText;
+  final GestureTapCallback onTap;
+
+  const LevelContainer({Key? key, required this.levelText, required this.onTap})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 55,
+        width: MediaQuery.of(context).size.width,
+        child: Center(child: Text(levelText)),
+        decoration: BoxDecoration(
+          color: Colors.orange[100],
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(30),
+            bottomLeft: Radius.circular(30),
+            topLeft: Radius.circular(30),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              offset: Offset(0.0, 1.0), //(x,y)
+              blurRadius: 6.0,
+            ),
+          ],
         ),
       ),
     );
